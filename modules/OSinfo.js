@@ -19,7 +19,7 @@ function getOSinfo() {
     console.log('Release: '.red, release);
     console.log('CPU model: '.blue, cpu);
     process.stdout.write('Uptime: ~ '.green + (uptime / 60).toFixed(0) + ' min\n');
-    process.stdout.write('User name: '.yellow + user.username + '\n');
+    process.stdout.write('User name: '.magenta + user.username + '\n');
     process.stdout.write('Home dir: ' + user.homedir + '\n');
     process.stdout.write('Time from start OS: '.america + Time.transformTime(uptime) + "\n");
 }

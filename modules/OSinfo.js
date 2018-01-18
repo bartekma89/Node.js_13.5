@@ -1,5 +1,6 @@
 var os = require('os');
 var Time = require('./Time');
+var Colors = require('colors');
 
 function getOSinfo() {
     if (type === 'Darwin') {
@@ -14,13 +15,13 @@ function getOSinfo() {
     var uptime = os.uptime();
     var user = os.userInfo();
     
-    console.log('System: ', type);
-    console.log('Release: ', release);
-    console.log('CPU model: ', cpu);
-    process.stdout.write('Uptime: ~' + (uptime / 60).toFixed(0) + ' min\n');
-    process.stdout.write('User name: ' + user.username + '\n');
+    console.log('System: '.gray, type);
+    console.log('Release: '.red, release);
+    console.log('CPU model: '.blue, cpu);
+    process.stdout.write('Uptime: ~ '.green + (uptime / 60).toFixed(0) + ' min\n');
+    process.stdout.write('User name: '.yellow + user.username + '\n');
     process.stdout.write('Home dir: ' + user.homedir + '\n');
-    process.stdout.write('Time from start OS: ' + Time.transformTime(uptime) + "\n");
+    process.stdout.write('Time from start OS: '.america + Time.transformTime(uptime) + "\n");
 }
 
 module.exports = {
